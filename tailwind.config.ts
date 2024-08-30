@@ -13,7 +13,19 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      
+      colors: {
+        customBlue: '#3498db',
+        customRed: '#e74c3c',
+      },
+      borderColor: {
+        gradient: 'linear-gradient(to right, #ff0077, #ff7f00)',
+      },
+      boxShadow: {
+        glow: '0 0 10px rgba(255, 105, 180, 0.7)',
+      },
     },
+    
   },
   plugins: [],
 };
