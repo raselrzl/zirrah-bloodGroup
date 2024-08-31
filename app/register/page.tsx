@@ -217,7 +217,7 @@ const UserForm: React.FC = () => {
   };
 
   return (
-    <div className="px-2 mb-40 md:px-10 lg:px-20 xl:px-24 flex flex-col items-center">
+    <div className="p-2 mb-40 md:px-10 lg:px-20 xl:px-24 flex flex-col items-center">
       <div className="bg-red-700 text-white p-2 shadow-lg flex items-center space-x-4">
         <FaExclamationTriangle className="text-2xl text-yellow-400" />
         <div className="flex-1">

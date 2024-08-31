@@ -204,7 +204,7 @@ const Search: React.FC = () => {
             }
             className="bg-gray-800 text-white border border-gray-700 px-4 py-2 w-full md:w-1/3"
           >
-            <option value="">Select Blood Group</option>
+            <option value="">Search by Blood Group</option>
             {bloodGroups.map((group) => (
               <option key={group} value={group}>
                 {group}
