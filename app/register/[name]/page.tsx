@@ -25,7 +25,7 @@ const Success = () => {
         <h2 className="header mb-4 px-10 max-w-[600px] text-center text-white">
           Welcome <span className="text-green-500 uppercase bold">{username}. <br/> <br/></span> Your <span className="text-red-500">Blood Group</span> has been
           successfully registered. Thank you for being a part of
-          this life-saving initiative! If you'd like to make sure if your name in the
+          this life-saving initiative! If you&apos;d like to make sure if your name in the
           list, please search and.
         </h2>
       </div>
