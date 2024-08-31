@@ -297,6 +297,7 @@ const [errors, setErrors] = useState<Errors>({});
           <input
             type="date"
             value={formData.dateOfBirth}
+            placeholder="mm/dd/yyyy"
             onChange={(e) =>
               setFormData({ ...formData, dateOfBirth: e.target.value })
             }
