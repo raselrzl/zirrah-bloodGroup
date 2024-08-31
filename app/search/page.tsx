@@ -1,5 +1,6 @@
 "use client";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import NavigationLink from "@/components/NavigationLink";
 import { User } from "@/lib/type";
 import React, { useEffect, useState } from "react";
 import {
@@ -331,6 +332,7 @@ const Search: React.FC = () => {
           ))}
         </div>
       )}
+      <NavigationLink />
     </div>
   );
 };

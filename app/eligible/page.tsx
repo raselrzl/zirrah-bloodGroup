@@ -1,11 +1,13 @@
 "use client"; // Ensure this line is present if you're using client-side features
 
+import NavigationLink from '@/components/NavigationLink';
 import React from 'react';
 import { FaTint, FaHeartbeat, FaSyringe, FaHandHoldingHeart } from 'react-icons/fa';
 
 const Eligible: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-200 py-16">
+    <div className="min-h-screen flex flex-col items-center bg-gray-900 text-gray-200 py-16 px-6">
+      
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-12">
           <h1 className="text-3xl font-extrabold text-red-500 mb-4">
@@ -112,6 +114,7 @@ const Eligible: React.FC = () => {
           </div>
         </div>
       </div>
+      <NavigationLink />
     </div>
   );
 };

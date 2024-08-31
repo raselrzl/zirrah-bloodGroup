@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { FaExclamationTriangle, FaInfoCircle } from "react-icons/fa";
+import NavigationLink from "@/components/NavigationLink";
 
 const UserForm: React.FC = () => {
   const router = useRouter();
@@ -217,8 +218,8 @@ const [errors, setErrors] = useState<Errors>({});
   
 
   return (
-    <div className="px-6 mb-40 md:px-10 lg:px-20 xl:px-24">
-      <div className="bg-red-700 text-white p-4 rounded-lg shadow-lg flex items-center space-x-4">
+    <div className="px-6 mb-40 md:px-10 lg:px-20 xl:px-24 flex flex-col items-center">
+      <div className="bg-red-700 text-white p-4 shadow-lg flex items-center space-x-4">
         <FaExclamationTriangle className="text-2xl text-yellow-400" />
         <div className="flex-1">
           <p className="mt-2 text-xs md:text-xl">
@@ -372,6 +373,7 @@ const [errors, setErrors] = useState<Errors>({});
           </button>
         </div>
       </form>
+      <NavigationLink />
     </div>
   );
 };
