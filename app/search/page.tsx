@@ -32,31 +32,34 @@ const Search: React.FC = () => {
   const [cities, setCities] = useState<string[]>([]);
   const bloodGroups = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 
-  const fetchData = async (): Promise<void> => {
-    setIsLoading(true);
-    try {
-      const response = await fetch(
-        `${BASE_API_URL}/api/userdata?cacheBuster=${Date.now()}`
-      );
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const data: User[] = await response.json();
-      setUsers(data);
-      const uniqueRegions = Array.from(
-        new Set(data.map((user) => user.region))
-      );
-      setRegions(uniqueRegions);
-    } catch (error) {
-      console.error("Failed to fetch users:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   useEffect(() => {
-    fetchData(); // Fetch data on initial mount
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch(`${BASE_API_URL}/api/userdata?cacheBuster=${Date.now()}`);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data: User[] = await response.json();
+        setUsers(data);
+        const uniqueRegions = Array.from(
+          new Set(data.map((user) => user.region))
+        );
+        setRegions(uniqueRegions);
+      } catch (error) {
+        console.error("Failed to fetch users:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+  
+    fetchData();
+  
+    const intervalId = setInterval(fetchData, 300000000);
+    return () => clearInterval(intervalId);
   }, []);
+  
+  
 
   useEffect(() => {
     const getCities = (region: string) => {
@@ -170,8 +173,6 @@ const Search: React.FC = () => {
         Here is our all Super Human
       </h1>
 
-      
-
       <div className="mb-6 px-10 ">
         <div className="flex flex-col justify-center md:flex-row md:space-x-2 space-y-4 md:space-y-0">
           <input
@@ -274,15 +275,6 @@ const Search: React.FC = () => {
             <span className="relative z-10">Search</span>
           </button>
         </div>
-        <div className="flex justify-center m-4">
-          <button
-            onClick={fetchData}
-            className="relative px-20 py-2.5 font-bold text-white bg-transparent border-2 border-transparent overflow-hidden group"
-          >
-            <span className="absolute inset-0 border-2 border-gradient opacity-70 group-hover:opacity-100 transition-opacity duration-300"></span>
-            <span className="relative z-10">{isLoading ? 'Refreshing...' : 'Refresh'}</span>
-          </button>
-        </div>
       </div>
 
       {isLoading ? (
@@ -305,8 +297,7 @@ const Search: React.FC = () => {
                 >
                   <FaPhoneAlt className="text-2xl" />
                 </a>
-              </div>
-              {/* 
+              </div>{/* 
               <div className="mb-2">
                 <p className="flex items-center text-sm">
                   <FaIdCard className="mr-2 text-green-500" />
