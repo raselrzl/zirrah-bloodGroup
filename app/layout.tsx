@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "zirrah",
-  description: "ZIRRAH, A complete MEdical Solution",
+  description: "ZIRRAH, A complete Medical Solution",
 };
 
 export default function RootLayout({

@@ -12,7 +12,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-between px-4 py-6 max-h-screen md:px-6 md:py-8 lg:px-8 lg:py-10">
+    <div className="flex flex-col items-center justify-between px-4 py-4 max-h-screen md:px-6 md:py-8 lg:px-8 lg:py-10">
       <h2 className="text-2xl  text-green-300 text-center p-4  md:text-2xl lg:text-3xl md:p-6 lg:p-8 m-4">
       &quot;When you give blood, you give hope, strength, and a chance at life.&quot;
       </h2>
