@@ -8,8 +8,8 @@ import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "zirrah",
-  description: "ZIRRAH, A complete Medical Solution",
+  title: "fash-care",
+  description: "fash-care, A complete Medical Solution",
 };
 
 export default function RootLayout({

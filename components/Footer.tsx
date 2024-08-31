@@ -2,10 +2,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="relative py-6 text-white">
+    <footer className="relative py-6 text-white pt-24">
       <div className="absolute bottom-4 left-4">
         <p className="text-gray-400 text-xs">
-          © 2024 ZIRRAH.
+          © 2024 FASHCARE.
         </p>
       </div>
       <div className="absolute bottom-4 right-4 flex space-x-4">

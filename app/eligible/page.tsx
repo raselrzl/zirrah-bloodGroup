@@ -7,7 +7,7 @@ import { FaTint, FaHeartbeat, FaSyringe, FaHandHoldingHeart } from 'react-icons/
 
 const Eligible: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center text-gray-200 py-16 px-2">
+    <div className="min-h-screen flex flex-col items-center text-gray-200 py-8 px-2">
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-12">
@@ -59,7 +59,7 @@ const Eligible: React.FC = () => {
               </div>
             </div>
             <img
-              src="/assets/images/b2.webp"
+              src="/assets/images/h11.png" 
               alt="Power Red Donation"
               className="w-full h-40 object-cover mb-4"
             />
@@ -80,7 +80,7 @@ const Eligible: React.FC = () => {
               </div>
             </div>
             <img
-              src="/assets/images/b3.jpg"
+              src="/assets/images/f2.jpg"
               alt="Platelet Donation"
               className="w-full h-40 object-cover mb-4"
             />

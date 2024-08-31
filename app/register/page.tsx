@@ -137,57 +137,7 @@ const UserForm: React.FC = () => {
 
     setCities(getCities(formData.region));
   }, [formData.region]);
-  const validate = (): boolean => {
-    const newErrors: Errors = {};
-
-    // Name validation
-    if (formData.name.trim() === "") {
-      newErrors.name = "Full Name cannot be empty";
-    }
-
-    // Phone number validation (Bangladesh format)
-    const phoneRegex = /^(?:\+8801|01)[3-9]\d{8}$/;
-    if (!phoneRegex.test(formData.phoneNumber)) {
-      newErrors.phoneNumber = "Invalid phone number";
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Invalid email address";
-    }
-
-    // Date of Birth validation (should not be in the future)
-    const today = new Date().toISOString().split("T")[0];
-    if (formData.dateOfBirth > today) {
-      newErrors.dateOfBirth = "Date cannot be in the future";
-    }
-
-    // Blood Group validation
-    if (formData.bloodGroup === "") {
-      newErrors.bloodGroup = "Please select a blood group";
-    }
-
-    // Region validation
-    if (formData.region === "") {
-      newErrors.region = "Please select a region";
-    }
-
-    // City validation
-    if (formData.city === "") {
-      newErrors.city = "Please select a city";
-    }
-
-    // Village validation
-    if (formData.village.trim() === "") {
-      newErrors.village = "Village/Area cannot be empty";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+   const handleSubmit = async (e: React.FormEvent) => {
     setIsLoading(true);
     setErrorMessage(null); // Clear any previous error message
     e.preventDefault();
@@ -217,7 +167,7 @@ const UserForm: React.FC = () => {
   };
 
   return (
-    <div className="p-2 mb-40 md:px-10 lg:px-20 xl:px-24 flex flex-col items-center">
+    <div className="min-h-screen flex flex-col items-center text-gray-200 py-8 px-2 overflow-x-hidden">
       <div className="bg-red-700 text-white p-2 shadow-lg flex items-center space-x-4">
         <FaExclamationTriangle className="text-2xl text-yellow-400" />
         <div className="flex-1">

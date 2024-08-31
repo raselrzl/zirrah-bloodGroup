@@ -163,7 +163,7 @@ const Search: React.FC = () => {
   }, [search, users]);
 
   return (
-    <div className="px-2 md:px-10 lg:px-10 xl:px-10 flex flex-col items-center">
+    <div className="min-h-screen flex flex-col items-center text-gray-200 py-4 px-2 overflow-x-hidden">
       <h1 className="text-2xl text-green-300 font-bold text-center m-6 px-4">
         Here is our all Super Human
       </h1>

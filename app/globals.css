@@ -24,6 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  scroll-behavior: smooth; /* Add this line for smooth scrolling */
 }
 
 @layer utilities {
@@ -32,4 +33,21 @@ body {
   }
 }
 
+@keyframes slideInFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
 
+.animate-slide-in-fade-in-loop {
+  animation: slideInFadeIn 3s ease-out infinite;
+}
