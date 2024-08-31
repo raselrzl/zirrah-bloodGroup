@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavLogo from "@/components/NavLogo";
 import Footer from "@/components/Footer";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+      <link rel="icon" href="/logo-BG.png" sizes="any" />
+      </Head>
       <body className={inter.className}>
         <NavLogo />
         {children}

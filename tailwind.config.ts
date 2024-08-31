@@ -13,7 +13,6 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      
       colors: {
         customBlue: '#3498db',
         customRed: '#e74c3c',
@@ -24,9 +23,18 @@ const config: Config = {
       boxShadow: {
         glow: '0 0 10px rgba(255, 105, 180, 0.7)',
       },
+      animation: {
+        spin: 'spin 1s linear infinite',
+      },
+      keyframes: {
+        spin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
     },
-    
   },
   plugins: [],
 };
+
 export default config;

@@ -9,6 +9,38 @@ export async function POST(request: Request) {
 
     const userData = await request.json(); // Parse the incoming JSON data
 
+    // Check if phone number or NID already exists
+    const existingUser = await collection.findOne({
+      $or: [
+        { phoneNumber: userData.phoneNumber },
+        { nidNumber: userData.nidNumber },
+        { email: userData.email }
+      ]
+    });
+
+    if (existingUser) {
+      if (existingUser.phoneNumber === userData.phoneNumber) {
+        return NextResponse.json(
+          { message: 'Phone number is already registered. Try a new phone number.' },
+          { status: 400 }
+        );
+      }
+
+      if (existingUser.nidNumber === userData.nidNumber) {
+        return NextResponse.json(
+          { message: 'NID number is already registered, Try a new NID.' },
+          { status: 400 }
+        );
+      }
+
+      if (existingUser.email === userData.email) {
+        return NextResponse.json(
+          { message: 'Email is already registered, Try a new Email.' },
+          { status: 400 }
+        );
+      }
+    }
+
     // Insert data into the MongoDB collection
     const result = await collection.insertOne(userData);
 

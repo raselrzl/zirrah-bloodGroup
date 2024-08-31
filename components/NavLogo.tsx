@@ -10,7 +10,7 @@ const NavLogo = () => {
     router.push('/');
   };
   return (
-    <div className="flex justify-center mb-4">
+    <div className="flex justify-center mb-4 ">
       <Image
         src="/assets/images/logo-BG.png"
         alt="Logo"
