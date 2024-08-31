@@ -7,7 +7,7 @@ import { BASE_API_URL } from "@/lib/utils";
 
 const UserForm: React.FC = () => {
   const router = useRouter();
-const [errors, setErrors] = useState<Errors>({});
+  const [errors, setErrors] = useState<Errors>({});
   const [formData, setFormData] = useState({
     name: "",
     nidNumber: "",
@@ -141,46 +141,46 @@ const [errors, setErrors] = useState<Errors>({});
     const newErrors: Errors = {};
 
     // Name validation
-    if (formData.name.trim() === '') {
-      newErrors.name = 'Full Name cannot be empty';
+    if (formData.name.trim() === "") {
+      newErrors.name = "Full Name cannot be empty";
     }
 
     // Phone number validation (Bangladesh format)
     const phoneRegex = /^(?:\+8801|01)[3-9]\d{8}$/;
     if (!phoneRegex.test(formData.phoneNumber)) {
-      newErrors.phoneNumber = 'Invalid phone number';
+      newErrors.phoneNumber = "Invalid phone number";
     }
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      newErrors.email = 'Invalid email address';
+      newErrors.email = "Invalid email address";
     }
 
     // Date of Birth validation (should not be in the future)
-    const today = new Date().toISOString().split('T')[0];
+    const today = new Date().toISOString().split("T")[0];
     if (formData.dateOfBirth > today) {
-      newErrors.dateOfBirth = 'Date cannot be in the future';
+      newErrors.dateOfBirth = "Date cannot be in the future";
     }
 
     // Blood Group validation
-    if (formData.bloodGroup === '') {
-      newErrors.bloodGroup = 'Please select a blood group';
+    if (formData.bloodGroup === "") {
+      newErrors.bloodGroup = "Please select a blood group";
     }
 
     // Region validation
-    if (formData.region === '') {
-      newErrors.region = 'Please select a region';
+    if (formData.region === "") {
+      newErrors.region = "Please select a region";
     }
 
     // City validation
-    if (formData.city === '') {
-      newErrors.city = 'Please select a city';
+    if (formData.city === "") {
+      newErrors.city = "Please select a city";
     }
 
     // Village validation
-    if (formData.village.trim() === '') {
-      newErrors.village = 'Village/Area cannot be empty';
+    if (formData.village.trim() === "") {
+      newErrors.village = "Village/Area cannot be empty";
     }
 
     setErrors(newErrors);
@@ -215,8 +215,6 @@ const [errors, setErrors] = useState<Errors>({});
       setErrorMessage("An error occurred. Please try again.");
     }
   };
-
-  
 
   return (
     <div className="px-2 mb-40 md:px-10 lg:px-20 xl:px-24 flex flex-col items-center">
@@ -295,9 +293,11 @@ const [errors, setErrors] = useState<Errors>({});
             className="bg-gray-800 font-bold text-white border border-gray-700 px-4 py-2 w-full"
           />
           <input
-            type="date"
+            type="text"
             value={formData.dateOfBirth}
             placeholder="mm/dd/yyyy"
+            onFocus={(e) => (e.target.type = "date")}
+            onBlur={(e) => (e.target.type = "text")}
             onChange={(e) =>
               setFormData({ ...formData, dateOfBirth: e.target.value })
             }
