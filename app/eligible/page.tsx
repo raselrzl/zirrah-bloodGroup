@@ -1,6 +1,7 @@
 "use client"; // Ensure this line is present if you're using client-side features
 
 import NavigationLink from '@/components/NavigationLink';
+import Image from 'next/image';
 import React from 'react';
 import { FaTint, FaHeartbeat, FaSyringe, FaHandHoldingHeart } from 'react-icons/fa';
 
@@ -65,8 +66,8 @@ const Eligible: React.FC = () => {
             <ul className="list-disc list-inside text-sm space-y-2">
               <li>Donation frequency: Every 112 days, up to 3 times/year*</li>
               <li>You must be in good health and feeling well**</li>
-              <li>Male donors+ must be at least 17 years old, at least 5'1" tall, and weigh at least 130 lbs</li>
-              <li>Female donors+ must be at least 19 years old, at least 5'3" tall, and weigh at least 150 lbs</li>
+              <li>Male donors+ must be at least 17 years old, at least 5&apos;1&apos;&apos; tall, and weigh at least 130 lbs</li>
+              <li>Female donors+ must be at least 19 years old, at least 5&apos;3&apos;&apos; tall, and weigh at least 150 lbs</li>
             </ul>
           </div>
 
@@ -78,7 +79,7 @@ const Eligible: React.FC = () => {
                 <h3 className="text-xl font-bold">Platelet Donation</h3>
               </div>
             </div>
-            <img
+            <Image
               src="/assets/images/b3.jpg"
               alt="Platelet Donation"
               className="w-full h-40 object-cover rounded-lg mb-4"
@@ -99,7 +100,7 @@ const Eligible: React.FC = () => {
                 <h3 className="text-xl font-bold">AB Elite Plasma Donation</h3>
               </div>
             </div>
-            <img
+            <Image
               src="/assets/images/p2.webp"
               alt="AB Elite Plasma Donation"
               className="w-full h-40 object-cover rounded-lg mb-4"

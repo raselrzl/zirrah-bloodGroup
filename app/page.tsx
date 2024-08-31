@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-between px-4 py-6 max-h-screen md:px-6 md:py-8 lg:px-8 lg:py-10">
       <h2 className="text-2xl  text-green-300 text-center p-4  md:text-2xl lg:text-3xl md:p-6 lg:p-8 m-4">
-        "When you give blood, you give hope, strength, and a chance at life."
+      &quot;When you give blood, you give hope, strength, and a chance at life.&quot;
       </h2>
       <div
         className="max-w-sm mx-4 mt-4 p-4 bg-gradient-to-r from-gray-800 via-gray-900 to-black shadow-xl border border-gray-700 md:max-w-md lg:max-w-lg md:mx-6 lg:mx-8 md:mt-6 lg:mt-8 md:p-6 lg:p-8"
