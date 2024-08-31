@@ -222,11 +222,11 @@ const [errors, setErrors] = useState<Errors>({});
       <div className="bg-red-700 text-white p-4 shadow-lg flex items-center space-x-4">
         <FaExclamationTriangle className="text-2xl text-yellow-400" />
         <div className="flex-1">
-          <p className="mt-2 text-xs md:text-xl">
+          <p className="mt-2 text-xs text-center md:text-xl">
             This is an open-source project aimed at helping others. Please
             ensure that the information you provide is accurate and truthful.
             Incorrect data can adversely affect those in need. If you need
-            assistance or wish to report any issues, please contact us at
+            assistance or wish to report any issues,
             <a
               href="mailto:raselz.se@gmail.com"
               className="underline text-yellow-300"
