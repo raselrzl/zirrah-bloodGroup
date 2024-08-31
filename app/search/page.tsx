@@ -36,7 +36,8 @@ const Search: React.FC = () => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch(`${BASE_API_URL}/api/userdata`);
+        // Add a cache-busting query parameter
+        const response = await fetch(`${BASE_API_URL}/api/userdata?cacheBuster=${Date.now()}`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -52,9 +53,10 @@ const Search: React.FC = () => {
         setIsLoading(false); // End loading
       }
     };
-
+  
     fetchData();
-  }, []);
+  }, []); // Empty dependency array to run only on mount
+  
 
   useEffect(() => {
     const getCities = (region: string) => {
