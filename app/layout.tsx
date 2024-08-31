@@ -8,7 +8,7 @@ import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ZIRRAH",
+  title: "zirrah",
   description: "ZIRRAH, A complete MEdical Solution",
 };
 
