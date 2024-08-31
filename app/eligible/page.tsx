@@ -15,7 +15,7 @@ const Eligible: React.FC = () => {
             Am I Eligible to Donate Blood?
           </h1>
           <p className="text-lg text-gray-400">
-            Discover if you're eligible to donate blood and learn about the requirements for different types of donations.
+            Discover if you`&apos;re eligible to donate blood and learn about the requirements for different types of donations.
           </p>
         </header>
 
