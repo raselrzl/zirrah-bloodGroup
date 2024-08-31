@@ -53,6 +53,7 @@ export default function Home() {
           className="object-cover"
         />
         {/* Signature Styled Heading with Looping Animation */}
+        <a href="/search" rel="noopener noreferrer">
         <h1 className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-6 text-xl font-bold pr-10 italic animate-slide-in-fade-in-loop"
             style={{ top: 'calc(50% - 30px)' }}
         >
@@ -60,7 +61,8 @@ export default function Home() {
                   <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                     -&gt;
                   </span>
-        </h1>
+        </h1></a>
+        
       </div>
 
         <div className="flex justify-center items-center group rounded-lg border border-transparent px-4 py-4 transition-colors hover:text-gray-400 md:px-6 md:py-6 lg:px-8 lg:py-8">
