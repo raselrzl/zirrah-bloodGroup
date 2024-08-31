@@ -163,19 +163,19 @@ const Search: React.FC = () => {
   }, [search, users]);
 
   return (
-    <div className="px-4 md:px-10 lg:px-10 xl:px-10 flex flex-col items-center">
-      <h1 className="text-3xl text-green-300 font-bold text-center m-6">
+    <div className="px-2 md:px-10 lg:px-10 xl:px-10 flex flex-col items-center">
+      <h1 className="text-2xl text-green-300 font-bold text-center m-6 px-4">
         Here is our all Super Human
       </h1>
 
       <div className="mb-6 px-10 ">
-        <div className="flex flex-col justify-center md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+        <div className="flex flex-col justify-center md:flex-row md:space-x-2 space-y-4 md:space-y-0">
           <input
             type="text"
             value={search.name}
             onChange={(e) => setSearch({ ...search, name: e.target.value })}
             placeholder="Search by Name"
-            className="bg-gray-800 text-white border border-gray-700 px-4 py-2 rounded w-full md:w-1/3"
+            className="bg-gray-800 text-white border border-gray-700 px-4 py-2 w-full md:w-1/3"
           />
           <input
             type="text"
@@ -184,7 +184,7 @@ const Search: React.FC = () => {
               setSearch({ ...search, nidNumber: e.target.value })
             }
             placeholder="Search by NID Number"
-            className="bg-gray-800 text-white border border-gray-700 px-4 py-2 rounded w-full md:w-1/3"
+            className="bg-gray-800 text-white border border-gray-700 px-4 py-2 w-full md:w-1/3"
           />
           <input
             type="text"
@@ -193,7 +193,7 @@ const Search: React.FC = () => {
               setSearch({ ...search, phoneNumber: e.target.value })
             }
             placeholder="Search by Phone Number"
-            className="bg-gray-800 text-white border border-gray-700 px-4 py-2 rounded w-full md:w-1/3"
+            className="bg-gray-800 text-white border border-gray-700 px-4 py-2 w-full md:w-1/3"
           />
         </div>
         <div className="flex flex-col justify-center mt-2 md:flex-row md:space-x-4 space-y-4 md:space-y-0">
@@ -202,7 +202,7 @@ const Search: React.FC = () => {
             onChange={(e) =>
               setSearch({ ...search, bloodGroup: e.target.value })
             }
-            className="bg-gray-800 text-white border border-gray-700 px-4 py-2 rounded w-full md:w-1/3"
+            className="bg-gray-800 text-white border border-gray-700 px-4 py-2 w-full md:w-1/3"
           >
             <option value="">Select Blood Group</option>
             {bloodGroups.map((group) => (
@@ -216,7 +216,7 @@ const Search: React.FC = () => {
             onChange={(e) =>
               setSearch({ ...search, region: e.target.value, city: "" })
             }
-            className="bg-gray-800 text-white border border-gray-700 px-4 py-2 rounded w-full md:w-1/3"
+            className="bg-gray-800 text-white border border-gray-700 px-4 py-2 w-full md:w-1/3"
           >
             <option value="">Select Region</option>
             {regions.map((region) => (
@@ -228,7 +228,7 @@ const Search: React.FC = () => {
           <select
             value={search.city}
             onChange={(e) => setSearch({ ...search, city: e.target.value })}
-            className="bg-gray-800 text-white border border-gray-700 px-4 py-2 rounded w-full md:w-1/3"
+            className="bg-gray-800 text-white border border-gray-700 px-4 py-2 w-full md:w-1/3"
           >
             <option value="">Select City</option>
             {cities.map((city) => (
@@ -264,9 +264,9 @@ const Search: React.FC = () => {
                 )
               )
             }
-            className="relative px-20 py-2.5 font-bold text-white bg-transparent border-2 border-transparent rounded-lg overflow-hidden group"
+            className="relative px-20 py-2.5 font-bold text-white bg-transparent border-2 border-transparent overflow-hidden group"
           >
-            <span className="absolute inset-0 border-2 border-gradient rounded-lg opacity-70 group-hover:opacity-100 transition-opacity duration-300"></span>
+            <span className="absolute inset-0 border-2 border-gradient opacity-70 group-hover:opacity-100 transition-opacity duration-300"></span>
             <span className="relative z-10">Search</span>
           </button>
         </div>
@@ -279,7 +279,7 @@ const Search: React.FC = () => {
           {filteredUsers.map((user, index) => (
             <div
               key={index}
-              className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white p-6 rounded-lg shadow-lg border border-gray-700 transition-transform transform hover:scale-105"
+              className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white p-6 shadow-lg border border-gray-700 transition-transform transform hover:scale-105"
             >
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-semibold flex items-center">
@@ -294,37 +294,37 @@ const Search: React.FC = () => {
                 </a>
               </div>{/* 
               <div className="mb-2">
-                <p className="flex items-center">
+                <p className="flex items-center text-sm">
                   <FaIdCard className="mr-2 text-green-500" />
                   NID: {user.nidNumber}
                 </p>
               </div> */}
               <div className="mb-2">
-                <p className="flex items-center">
+                <p className="flex items-center text-sm">
                   <FaPhone className="mr-2 text-green-500" />
                   {user.phoneNumber}
                 </p>
               </div>
               <div className="mb-2">
-                <p className="flex items-center">
+                <p className="flex items-center text-sm">
                   <FaHome className="mr-2 text-green-500" />
                   Village/Area: {user.village}
                 </p>
               </div>
               <div className="mb-2">
-                <p className="flex items-center">
+                <p className="flex items-center text-sm">
                   <FaHeartbeat className="mr-2 text-green-500" />
                   Blood Group: {user.bloodGroup}
                 </p>
               </div>
               <div className="mb-2">
-                <p className="flex items-center">
+                <p className="flex items-center text-sm">
                   <FaCity className="mr-2 text-green-500" />
                   City: {user.city}
                 </p>
               </div>
               <div>
-                <p className="flex items-center">
+                <p className="flex items-center text-sm">
                   <FaMapMarkerAlt className="mr-2 text-green-500" />
                   Region: {user.region}
                 </p>

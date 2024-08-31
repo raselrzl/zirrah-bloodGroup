@@ -7,7 +7,7 @@ import { FaTint, FaHeartbeat, FaSyringe, FaHandHoldingHeart } from 'react-icons/
 
 const Eligible: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gray-900 text-gray-200 py-16 px-6">
+    <div className="min-h-screen flex flex-col items-center text-gray-200 py-16 px-2">
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-12">
@@ -30,7 +30,7 @@ const Eligible: React.FC = () => {
 
         <div className="flex flex-col gap-12 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-16">
           {/* Whole Blood Donation */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700">
+          <div className="p-6 space-y-4 bg-gradient-to-r from-gray-800 via-gray-900 to-black shadow-xl border border-gray-700">
             <div className="flex items-center mb-4">
               <FaTint className="text-red-500 text-4xl mr-4" />
               <div>
@@ -40,7 +40,7 @@ const Eligible: React.FC = () => {
             <img
               src="/assets/images/b1.webp"
               alt="Whole Blood Donation"
-              className="w-full h-40 object-cover rounded-lg mb-4"
+              className="w-full h-40 object-cover mb-4"
             />
             <ul className="list-disc list-inside text-sm space-y-2">
               <li>Donation frequency: Every 56 days, up to 6 times a year*</li>
@@ -51,7 +51,7 @@ const Eligible: React.FC = () => {
           </div>
 
           {/* Power Red Donation */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700">
+          <div className="p-6 space-y-4 bg-gradient-to-r from-gray-800 via-gray-900 to-black shadow-xl border border-gray-700">
             <div className="flex items-center mb-4">
               <FaHeartbeat className="text-red-500 text-4xl mr-4" />
               <div>
@@ -61,7 +61,7 @@ const Eligible: React.FC = () => {
             <img
               src="/assets/images/b2.webp"
               alt="Power Red Donation"
-              className="w-full h-40 object-cover rounded-lg mb-4"
+              className="w-full h-40 object-cover mb-4"
             />
             <ul className="list-disc list-inside text-sm space-y-2">
               <li>Donation frequency: Every 112 days, up to 3 times/year*</li>
@@ -72,17 +72,17 @@ const Eligible: React.FC = () => {
           </div>
 
           {/* Platelet Donation */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700">
+          <div className="p-6 space-y-4 bg-gradient-to-r from-gray-800 via-gray-900 to-black shadow-xl border border-gray-700">
             <div className="flex items-center mb-4">
               <FaSyringe className="text-red-500 text-4xl mr-4" />
               <div>
                 <h3 className="text-xl font-bold">Platelet Donation</h3>
               </div>
             </div>
-            <Image
+            <img
               src="/assets/images/b3.jpg"
               alt="Platelet Donation"
-              className="w-full h-40 object-cover rounded-lg mb-4"
+              className="w-full h-40 object-cover mb-4"
             />
             <ul className="list-disc list-inside text-sm space-y-2">
               <li>Donation frequency: Every 7 days, up to 24 times/year*</li>
@@ -93,17 +93,17 @@ const Eligible: React.FC = () => {
           </div>
 
           {/* AB Elite Plasma Donation */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700">
+          <div className="p-6 space-y-4 bg-gradient-to-r from-gray-800 via-gray-900 to-black shadow-xl border border-gray-700">
             <div className="flex items-center mb-4">
               <FaHandHoldingHeart className="text-red-500 text-4xl mr-4" />
               <div>
                 <h3 className="text-xl font-bold">AB Elite Plasma Donation</h3>
               </div>
             </div>
-            <Image
+            <img
               src="/assets/images/p2.webp"
               alt="AB Elite Plasma Donation"
-              className="w-full h-40 object-cover rounded-lg mb-4"
+              className="w-full h-40 object-cover mb-4"
             />
             <ul className="list-disc list-inside text-sm space-y-2">
               <li>Donation frequency: Every 28 days, up to 13 times/year*</li>

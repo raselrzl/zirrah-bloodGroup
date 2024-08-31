@@ -219,8 +219,8 @@ const [errors, setErrors] = useState<Errors>({});
   
 
   return (
-    <div className="px-6 mb-40 md:px-10 lg:px-20 xl:px-24 flex flex-col items-center">
-      <div className="bg-red-700 text-white p-4 shadow-lg flex items-center space-x-4">
+    <div className="px-2 mb-40 md:px-10 lg:px-20 xl:px-24 flex flex-col items-center">
+      <div className="bg-red-700 text-white p-2 shadow-lg flex items-center space-x-4">
         <FaExclamationTriangle className="text-2xl text-yellow-400" />
         <div className="flex-1">
           <p className="mt-2 text-xs text-center md:text-xl">
@@ -244,7 +244,7 @@ const [errors, setErrors] = useState<Errors>({});
       </h1>
 
       {errorMessage && (
-        <div className="bg-red-600 text-white p-4 rounded-lg shadow-lg mb-4">
+        <div className="bg-red-600 text-white p-2 rounded-lg shadow-lg mb-4">
           <FaExclamationTriangle className="text-2xl inline-block mr-2" />
           {errorMessage}
         </div>
@@ -252,7 +252,7 @@ const [errors, setErrors] = useState<Errors>({});
 
       <form
         onSubmit={handleSubmit}
-        className="space-y-4 bg-gradient-to-r from-gray-800 via-gray-900 to-black shadow-xl border border-gray-700 p-10 md:px-10 lg:px-20 xl:px-24"
+        className="space-y-4 bg-gradient-to-r from-gray-800 via-gray-900 to-black shadow-xl border border-gray-700 p-4 md:px-10 lg:px-20 xl:px-24"
       >
         <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
           <input
@@ -260,7 +260,7 @@ const [errors, setErrors] = useState<Errors>({});
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             placeholder="Full Name"
-            className="bg-gray-800 font-bold text-white border border-gray-700 px-4 py-2 rounded w-full"
+            className="bg-gray-800 font-bold text-white border border-gray-700 px-4 py-2 w-full"
             required
           />
           <input
@@ -270,7 +270,7 @@ const [errors, setErrors] = useState<Errors>({});
               setFormData({ ...formData, nidNumber: e.target.value })
             }
             placeholder="NID Number"
-            className="bg-gray-800 font-bold text-white border border-gray-700 px-4 py-2 rounded w-full"
+            className="bg-gray-800 font-bold text-white border border-gray-700 px-4 py-2 w-full"
           />
           <input
             type="text"
@@ -279,7 +279,7 @@ const [errors, setErrors] = useState<Errors>({});
               setFormData({ ...formData, phoneNumber: e.target.value })
             }
             placeholder="Phone Number"
-            className="bg-gray-800 font-bold text-white border border-gray-700 px-4 py-2 rounded w-full"
+            className="bg-gray-800 font-bold text-white border border-gray-700 px-4 py-2 w-full"
             required
           />
         </div>
@@ -292,7 +292,7 @@ const [errors, setErrors] = useState<Errors>({});
               setFormData({ ...formData, email: e.target.value })
             }
             placeholder="Email"
-            className="bg-gray-800 font-bold text-white border border-gray-700 px-4 py-2 rounded w-full"
+            className="bg-gray-800 font-bold text-white border border-gray-700 px-4 py-2 w-full"
           />
           <input
             type="date"
@@ -300,7 +300,7 @@ const [errors, setErrors] = useState<Errors>({});
             onChange={(e) =>
               setFormData({ ...formData, dateOfBirth: e.target.value })
             }
-            className="bg-gray-800 text-white font-bold border border-gray-700 px-4 py-2 rounded w-full"
+            className="bg-gray-800 text-white font-bold border border-gray-700 px-4 py-2 w-full"
             required
           />
           <select
@@ -308,7 +308,7 @@ const [errors, setErrors] = useState<Errors>({});
             onChange={(e) =>
               setFormData({ ...formData, bloodGroup: e.target.value })
             }
-            className="bg-gray-800 font-bold text-white border border-gray-700 px-4 py-2 rounded w-full"
+            className="bg-gray-800 font-bold text-white border border-gray-700 px-4 py-2 w-full"
             required
           >
             <option value="">Select Blood Group</option>
@@ -326,7 +326,7 @@ const [errors, setErrors] = useState<Errors>({});
             onChange={(e) =>
               setFormData({ ...formData, region: e.target.value })
             }
-            className="bg-gray-800 text-white font-bold border border-gray-700 px-4 py-2 rounded w-full"
+            className="bg-gray-800 text-white font-bold border border-gray-700 px-4 py-2 w-full"
             required
           >
             <option value="">Select Region</option>
@@ -339,7 +339,7 @@ const [errors, setErrors] = useState<Errors>({});
           <select
             value={formData.city}
             onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-            className="bg-gray-800 text-white font-bold border border-gray-700 px-4 py-2 rounded w-full"
+            className="bg-gray-800 text-white font-bold border border-gray-700 px-4 py-2 w-full"
             required
           >
             <option value="">Select City</option>
@@ -358,16 +358,16 @@ const [errors, setErrors] = useState<Errors>({});
             setFormData({ ...formData, village: e.target.value })
           }
           placeholder="Village/Area"
-          className="bg-gray-800 text-white font-bold border border-gray-700 px-4 py-2 rounded w-full"
+          className="bg-gray-800 text-white font-bold border border-gray-700 px-4 py-2 w-full"
           required
         />
 
         <div className="flex justify-center items-center">
           <button
             type="submit"
-            className="relative px-6 py-3 font-bold text-white bg-transparent border-2 border-transparent rounded-lg overflow-hidden group hover:border-gray-400 hover:bg-gray-800"
+            className="relative px-6 py-3 font-bold text-white bg-transparent border-2 border-transparent overflow-hidden group hover:border-gray-400 hover:bg-gray-800"
           >
-            <span className="absolute inset-0 border-2 border-gradient rounded-lg opacity-70 group-hover:opacity-100 transition-opacity duration-300"></span>
+            <span className="absolute inset-0 border-2 border-gradient opacity-70 group-hover:opacity-100 transition-opacity duration-300"></span>
             <span className="relative z-10 px-10 text-base md:text-lg lg:text-xl">
               {isLoading ? "Loading..." : "Register"}
             </span>
