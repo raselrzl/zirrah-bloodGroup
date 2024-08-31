@@ -2,6 +2,7 @@
 import LoadingSpinner from "@/components/LoadingSpinner";
 import NavigationLink from "@/components/NavigationLink";
 import { User } from "@/lib/type";
+import { BASE_API_URL } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 import {
   FaUser,
@@ -35,7 +36,7 @@ const Search: React.FC = () => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch("/api/userdata");
+        const response = await fetch(`${BASE_API_URL}/api/userdata`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

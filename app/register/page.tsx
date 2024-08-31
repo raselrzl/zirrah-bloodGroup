@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { FaExclamationTriangle, FaInfoCircle } from "react-icons/fa";
 import NavigationLink from "@/components/NavigationLink";
+import { BASE_API_URL } from "@/lib/utils";
 
 const UserForm: React.FC = () => {
   const router = useRouter();
@@ -192,7 +193,7 @@ const [errors, setErrors] = useState<Errors>({});
     e.preventDefault();
 
     try {
-      const response = await fetch("/api/adduser", {
+      const response = await fetch(`${BASE_API_URL}/api/adduser`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
