@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { connectToDatabase, disconnectFromDatabase } from '@/lib/mongodb';
-import { sendSSEUpdate } from '../sse/route'; // Import the SSE update function
+import { sendSSEUpdate } from '@/lib/utils';
 
 export async function POST(request: Request) {
   try {
