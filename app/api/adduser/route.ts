@@ -1,6 +1,6 @@
-// app/api/adduser/route.ts
 import { NextResponse } from 'next/server';
 import { connectToDatabase, disconnectFromDatabase } from '@/lib/mongodb';
+import { sendSSEUpdate } from '../sse/route'; // Import the SSE update function
 
 export async function POST(request: Request) {
   try {
@@ -9,7 +9,7 @@ export async function POST(request: Request) {
 
     const userData = await request.json(); // Parse the incoming JSON data
 
-    // Check if phone number or NID already exists
+    // Check if phone number, NID, or email already exists
     const existingUser = await collection.findOne({
       $or: [
         { phoneNumber: userData.phoneNumber },
@@ -45,6 +45,9 @@ export async function POST(request: Request) {
     const result = await collection.insertOne(userData);
 
     console.log('User inserted:', result);
+
+    // Trigger an SSE update with the new user data
+    sendSSEUpdate(userData);
 
     return NextResponse.json({ message: 'User added successfully' });
   } catch (error) {

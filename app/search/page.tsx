@@ -32,12 +32,12 @@ const Search: React.FC = () => {
   const [cities, setCities] = useState<string[]>([]);
   const bloodGroups = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 
+  // Initial data fetch and setup SSE for real-time updates
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        // Add a cache-busting query parameter
-        const response = await fetch(`${BASE_API_URL}/api/userdata?cacheBuster=${Date.now()}`);
+        const response = await fetch(`${BASE_API_URL}/api/userdata`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -53,15 +53,45 @@ const Search: React.FC = () => {
         setIsLoading(false);
       }
     };
-  
-    fetchData();
-  
-    const intervalId = setInterval(fetchData, 300000);
-    return () => clearInterval(intervalId);
-  }, []);
-  
-  
 
+    fetchData();
+
+    // Setup Server-Sent Events (SSE) for real-time updates
+    const eventSource = new EventSource(`${BASE_API_URL}/api/userdata`);
+
+    eventSource.onmessage = (event) => {
+      const updatedUser: User = JSON.parse(event.data);
+
+      // Update the users state with the new data
+      setUsers((prevUsers) => {
+        const updatedUsers = [...prevUsers];
+        const index = updatedUsers.findIndex(
+          (user) => user.id === updatedUser.id
+        );
+        if (index !== -1) {
+          updatedUsers[index] = updatedUser;
+        } else {
+          updatedUsers.push(updatedUser);
+        }
+        return updatedUsers;
+      });
+
+      // Update the regions state if the region of the updated user is new
+      setRegions((prevRegions) => {
+        if (!prevRegions.includes(updatedUser.region)) {
+          return [...prevRegions, updatedUser.region];
+        }
+        return prevRegions;
+      });
+    };
+
+    // Cleanup the EventSource when the component is unmounted
+    return () => {
+      eventSource.close();
+    };
+  }, []);
+
+  // Update cities based on selected region
   useEffect(() => {
     const getCities = (region: string) => {
       switch (region) {
@@ -150,6 +180,7 @@ const Search: React.FC = () => {
     setCities(getCities(search.region));
   }, [search.region]);
 
+  // Filter users based on search criteria
   useEffect(() => {
     const filtered = users.filter(
       (user) =>

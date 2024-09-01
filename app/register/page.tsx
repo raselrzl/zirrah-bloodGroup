@@ -19,6 +19,7 @@ const UserForm: React.FC = () => {
     region: "",
     village: "",
   });
+
   interface Errors {
     name?: string;
     phoneNumber?: string;
@@ -137,7 +138,8 @@ const UserForm: React.FC = () => {
 
     setCities(getCities(formData.region));
   }, [formData.region]);
-   const handleSubmit = async (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     setIsLoading(true);
     setErrorMessage(null); // Clear any previous error message
     e.preventDefault();
@@ -155,6 +157,15 @@ const UserForm: React.FC = () => {
       setIsLoading(false);
 
       if (response.ok) {
+        // Trigger SSE update
+        await fetch(`${BASE_API_URL}/api/sse`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message: "New user registered", user: formData }),
+        });
+
         router.push(`/register/${encodeURIComponent(formData.name)}/`);
       } else {
         setErrorMessage(result.message || "Failed to add user");
