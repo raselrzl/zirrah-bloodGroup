@@ -1,21 +1,26 @@
 "use client"; // Ensure this line is present if you're using client-side features
 
-import NavigationLink from '@/components/NavigationLink';
-import Image from 'next/image';
-import React from 'react';
-import { FaTint, FaHeartbeat, FaSyringe, FaHandHoldingHeart } from 'react-icons/fa';
+import NavigationLink from "@/components/NavigationLink";
+import Image from "next/image";
+import React from "react";
+import {
+  FaTint,
+  FaHeartbeat,
+  FaSyringe,
+  FaHandHoldingHeart,
+} from "react-icons/fa";
 
 const Eligible: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center text-gray-200 py-8 px-2">
-      
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-12">
           <h1 className="text-3xl font-extrabold text-red-500 mb-4">
             Am I Eligible to Donate Blood?
           </h1>
           <p className="text-lg text-gray-400">
-            Discover if you`&apos;re eligible to donate blood and learn about the requirements for different types of donations.
+            Discover if you`&apos;re eligible to donate blood and learn about
+            the requirements for different types of donations.
           </p>
         </header>
 
@@ -24,7 +29,8 @@ const Eligible: React.FC = () => {
             Requirements by Donation Type
           </h2>
           <p className="text-md text-gray-400">
-            To ensure the safety of both patients and donors, here are the requirements for different types of blood donations.
+            To ensure the safety of both patients and donors, here are the
+            requirements for different types of blood donations.
           </p>
         </section>
 
@@ -37,9 +43,11 @@ const Eligible: React.FC = () => {
                 <h3 className="text-xl font-bold">Whole Blood Donation</h3>
               </div>
             </div>
-            <img
+            <Image
               src="/assets/images/b1.webp"
               alt="Whole Blood Donation"
+              width={500} // replace with actual width
+              height={160} // replace with actual height
               className="w-full h-40 object-cover mb-4"
             />
             <ul className="list-disc list-inside text-sm space-y-2">
@@ -58,16 +66,24 @@ const Eligible: React.FC = () => {
                 <h3 className="text-xl font-bold">Power Red Donation</h3>
               </div>
             </div>
-            <img
-              src="/assets/images/h11.png" 
+            <Image
+              src="/assets/images/h11.png"
               alt="Power Red Donation"
+              width={500} // replace with actual width
+              height={160} // replace with actual height
               className="w-full h-40 object-cover mb-4"
             />
             <ul className="list-disc list-inside text-sm space-y-2">
               <li>Donation frequency: Every 112 days, up to 3 times/year*</li>
               <li>You must be in good health and feeling well**</li>
-              <li>Male donors+ must be at least 17 years old, at least 5&apos;1&apos;&apos; tall, and weigh at least 130 lbs</li>
-              <li>Female donors+ must be at least 19 years old, at least 5&apos;3&apos;&apos; tall, and weigh at least 150 lbs</li>
+              <li>
+                Male donors+ must be at least 17 years old, at least
+                5&apos;1&apos;&apos; tall, and weigh at least 130 lbs
+              </li>
+              <li>
+                Female donors+ must be at least 19 years old, at least
+                5&apos;3&apos;&apos; tall, and weigh at least 150 lbs
+              </li>
             </ul>
           </div>
 
@@ -79,9 +95,11 @@ const Eligible: React.FC = () => {
                 <h3 className="text-xl font-bold">Platelet Donation</h3>
               </div>
             </div>
-            <img
+            <Image
               src="/assets/images/f2.jpg"
               alt="Platelet Donation"
+              width={500} // replace with actual width
+              height={160} // replace with actual height
               className="w-full h-40 object-cover mb-4"
             />
             <ul className="list-disc list-inside text-sm space-y-2">
@@ -100,9 +118,11 @@ const Eligible: React.FC = () => {
                 <h3 className="text-xl font-bold">AB Elite Plasma Donation</h3>
               </div>
             </div>
-            <img
+            <Image
               src="/assets/images/p2.webp"
               alt="AB Elite Plasma Donation"
+              width={500} // replace with actual width
+              height={160} // replace with actual height
               className="w-full h-40 object-cover mb-4"
             />
             <ul className="list-disc list-inside text-sm space-y-2">
