@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FaUserPlus, FaCheckCircle, FaHome, FaEnvelope, FaSearch } from 'react-icons/fa';
