@@ -36,6 +36,7 @@ const Search: React.FC = () => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
+        // Add a cache-busting query parameter
         const response = await fetch(`${BASE_API_URL}/api/userdata?cacheBuster=${Date.now()}`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -55,7 +56,7 @@ const Search: React.FC = () => {
   
     fetchData();
   
-    const intervalId = setInterval(fetchData, 300000000);
+    const intervalId = setInterval(fetchData, 300000);
     return () => clearInterval(intervalId);
   }, []);
   
